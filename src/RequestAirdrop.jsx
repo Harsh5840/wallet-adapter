@@ -14,7 +14,6 @@ const RequestAirdrop = () => {
         console.log(error)
     }
     }
-
   return (
     <div className="flex flex-col items-center justify-center gap-4">
         <input type="text" id='amount' placeholder="amount" className="border-2 border-white rounded-md p-2" />

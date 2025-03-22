@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import "./App.css";
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
@@ -8,25 +8,27 @@ import {
     WalletDisconnectButton,
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
+
 
 // Default styles that can be overridden by your app
 import '@solana/wallet-adapter-react-ui/styles.css';
 import RequestAirdrop from './RequestAirdrop';
-import ShowBalance from './ShowBalance';
+import { ShowSolBalance } from './ShowBalance';
+import SendToken from './SendToken';
 
 function App() {
 
   return (
     <>
     <div className='flex flex-col items-center justify-center h-screen gap-4'>
-      <ConnectionProvider endpoint={"https://faucet.solana.com"}>
+      <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                     <WalletMultiButton />
                     <WalletDisconnectButton />
                     <RequestAirdrop />
-                    <ShowBalance />
+                    <ShowSolBalance />
+                    <SendToken />
                     { /* Your app's components go here, nested within the context providers. */ }
                 </WalletModalProvider>
             </WalletProvider>
