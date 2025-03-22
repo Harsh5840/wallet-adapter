@@ -15,6 +15,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 import RequestAirdrop from './RequestAirdrop';
 import { ShowSolBalance } from './ShowBalance';
 import SendToken from './SendToken';
+import SignMessage from './SignMessage';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                     <RequestAirdrop />
                     <ShowSolBalance />
                     <SendToken />
+                    <SignMessage />
                     { /* Your app's components go here, nested within the context providers. */ }
                 </WalletModalProvider>
             </WalletProvider>
